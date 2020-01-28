@@ -1,8 +1,12 @@
 import pygame
-
+from pygame.locals import*
 pygame.init()
 
-screen = pygame.display.set_mode([500, 500])
+window = pygame.display.set_mode((1000, 700))
+pygame.display.set_caption("Kemi Fældningsreaktioner")
+
+ag = pygame.image.load("AgNO3.png").convert()
+
 
 running = True
 while running:
@@ -11,11 +15,10 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    screen.fill((255, 255, 255))
+    window.fill((255, 0, 0))
+    pygame.draw.rect(window, (255, 0, 0), (0, 0, 20, 40))
 
-    pygame.draw.circle(screen, (0, 0, 255), (250, 250), 75)
-
-    pygame.display.flip()
+    window.blit(ag, (0,0))
 
 
 pygame.quit()
