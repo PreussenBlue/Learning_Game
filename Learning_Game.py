@@ -50,7 +50,6 @@ while running:
     else:
         pygame.draw.rect(window, red, (10, 80, 60, 30))
 
-
     if 110+60 > mouse[0] > 110 and 80+30 > mouse[1] > 80:
         pygame.draw.rect(window, green, (110, 80, 60, 30))
     else:
@@ -61,28 +60,72 @@ while running:
     else:
         pygame.draw.rect(window, red, (210, 80, 60, 30))
 
-
     if 310+60 > mouse[0] > 310 and 80+30 > mouse[1] > 80:
         pygame.draw.rect(window, green, (310, 80, 60, 30))
     else:
         pygame.draw.rect(window, red, (310, 80, 60, 30))
 
+    if 410+60 > mouse[0] > 410 and 80+30 > mouse[1] > 80:
+        pygame.draw.rect(window, green, (410, 80, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (410, 80, 60, 30))
+
+    if 510+60 > mouse[0] > 510 and 80+30 > mouse[1] > 80:
+        pygame.draw.rect(window, green, (510, 80, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (510, 80, 60, 30))
     
-    pygame.draw.rect(window, red, (410, 80, 60, 30))
-    pygame.draw.rect(window, red, (510, 80, 60, 30))
-    pygame.draw.rect(window, red, (610, 80, 60, 30))
-    pygame.draw.rect(window, red, (710, 80, 60, 30))
+    if 610+60 > mouse[0] > 610 and 80+30> mouse[1] > 80:
+        pygame.draw.rect(window, green, (610, 80, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (610, 80, 60, 30))
+
+    if 710+60 > mouse[0] > 710 and 80+30 > mouse[1] > 80:
+        pygame.draw.rect(window, green, (710, 80, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (710, 80, 60, 30))
     
 
     #laver knapper til række 2
-    pygame.draw.rect(window, red, (10, 230, 60, 30))
-    pygame.draw.rect(window, red, (110, 230, 60, 30))
-    pygame.draw.rect(window, red, (210, 230, 60, 30))
-    pygame.draw.rect(window, red, (310, 230, 60, 30))
-    pygame.draw.rect(window, red, (410, 230, 60, 30))
-    pygame.draw.rect(window, red, (510, 230, 60, 30))
-    pygame.draw.rect(window, red, (610, 230, 60, 30))
-    pygame.draw.rect(window, red, (710, 230, 60, 30))
+    if 10+60 > mouse[0] > 10 and 230+30 > mouse[1] > 230:
+        pygame.draw.rect(window, green, (10, 230, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (10, 230, 60, 30))
+
+    if 110+60 > mouse[0] > 110 and 230+30 > mouse[1] > 230:
+        pygame.draw.rect(window, green, (110, 230, 60, 30))
+    else:    
+        pygame.draw.rect(window, red, (110, 230, 60, 30))
+
+    if 210+60 > mouse[0] >210 and 230+30 > mouse[1] > 230:
+        pygame.draw.rect(window, green, (210, 230, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (210, 230, 60, 30))
+
+    if 310+60 > mouse[0] > 310 and 230+30 > mouse[1] > 230:
+        pygame.draw.rect(window, green, (310, 230, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (310, 230, 60, 30))
+
+    if 410+60 > mouse[0] > 410 and 230+30 > mouse[1] > 230:
+        pygame.draw.rect(window, green, (410, 230, 60, 30))
+    else:    
+        pygame.draw.rect(window, red, (410, 230, 60, 30))
+
+    if 510+60 > mouse[0] > 510 and 230+30 > mouse[1] > 230:
+        pygame.draw.rect(window, green, (510, 230, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (510, 230, 60, 30))
+
+    if 610+60 > mouse[0] > 610 and 230+30 > mouse[1] > 230:
+        pygame.draw.rect(window, green, (610, 230, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (610, 230, 60, 30))
+
+    if 710+60 > mouse[0] > 710 and 230+30 > mouse[1] > 230:
+        pygame.draw.rect(window, green, (710, 230, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (710, 230, 60, 30))
 
     window.blit(ag, (0,0)) #sætter billede ind i række 1
     window.blit(al, (100, 0))
