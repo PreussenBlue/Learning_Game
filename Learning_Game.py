@@ -17,6 +17,10 @@ na = pygame.image.load("NaCl.png").convert()
 #vælger font til tekst
 the_font = pygame.font.SysFont("Comic_Sans", 20)
 
+#laver farver klar til knapperne
+red = (255, 0, 0)
+green = (0, 255, 0)
+
 
 #tekst til knapperne
 ag_tekst = the_font.render("AgNO3", True, (255, 255, 255))
@@ -36,26 +40,49 @@ while running:
             running = False
 
     window.fill((255, 255, 255))
+
+        #henter musens position
+    mouse = pygame.mouse.get_pos()
+    
     #laver knapper til række 1
-    pygame.draw.rect(window, (255, 0, 0), (10, 80, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (110, 80, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (210, 80, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (310, 80, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (410, 80, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (510, 80, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (610, 80, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (710, 80, 60, 30))
+    if 10+60 > mouse[0] > 10 and 80+30 > mouse[1] > 80:
+        pygame.draw.rect(window, green, (10, 80, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (10, 80, 60, 30))
+
+
+    if 110+60 > mouse[0] > 110 and 80+30 > mouse[1] > 80:
+        pygame.draw.rect(window, green, (110, 80, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (110, 80, 60, 30))
+
+    if 210+60 > mouse[0] > 210 and 80+30 > mouse[1] > 80:
+        pygame.draw.rect(window, green, (210, 80, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (210, 80, 60, 30))
+
+
+    if 310+60 > mouse[0] > 310 and 80+30 > mouse[1] > 80:
+        pygame.draw.rect(window, green, (310, 80, 60, 30))
+    else:
+        pygame.draw.rect(window, red, (310, 80, 60, 30))
+
+    
+    pygame.draw.rect(window, red, (410, 80, 60, 30))
+    pygame.draw.rect(window, red, (510, 80, 60, 30))
+    pygame.draw.rect(window, red, (610, 80, 60, 30))
+    pygame.draw.rect(window, red, (710, 80, 60, 30))
     
 
-    #laver knapper til 
-    pygame.draw.rect(window, (255, 0, 0), (10, 230, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (110, 230, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (210, 230, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (310, 230, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (410, 230, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (510, 230, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (610, 230, 60, 30))
-    pygame.draw.rect(window, (255, 0, 0), (710, 230, 60, 30))
+    #laver knapper til række 2
+    pygame.draw.rect(window, red, (10, 230, 60, 30))
+    pygame.draw.rect(window, red, (110, 230, 60, 30))
+    pygame.draw.rect(window, red, (210, 230, 60, 30))
+    pygame.draw.rect(window, red, (310, 230, 60, 30))
+    pygame.draw.rect(window, red, (410, 230, 60, 30))
+    pygame.draw.rect(window, red, (510, 230, 60, 30))
+    pygame.draw.rect(window, red, (610, 230, 60, 30))
+    pygame.draw.rect(window, red, (710, 230, 60, 30))
 
     window.blit(ag, (0,0)) #sætter billede ind i række 1
     window.blit(al, (100, 0))
@@ -74,6 +101,11 @@ while running:
     window.blit(ki, (500, 150))
     window.blit(ko, (600, 150))
     window.blit(na, (700, 150))
+
+
+
+
+        
 
     #tekst sættes ind i øverste række
     window.blit(ag_tekst, (15, 86))
