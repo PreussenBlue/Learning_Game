@@ -49,16 +49,23 @@ def button(tekst,x,y,wid,hei,ac,ic,tx,ty,sand,op):
     
 
     if op == 0:
+        
         if x+wid > mouse[0] > x and y+hei > mouse[1] > y:
             pygame.draw.rect(window, ac, (x, y, wid, hei))
+
             if click[0] == 1:
                 sand = True
                 op = op+1
-                print(op)
-        else:
+                print(sand)
+
+            
+        elif sand == False:
             pygame.draw.rect(window, ic, (x, y, wid, hei))
-    else:
+
+
+    elif op >= 0:
         pygame.draw.rect(window, ac, (x, y, wid, hei))
+
     
     window.blit(tekst, (tx,ty))
 
@@ -74,14 +81,12 @@ while running:
     window.fill((255, 255, 255))
 
 
-    if sand == True:
-        pygame.draw.rect(window, green, (310, 80, 60, 30))
-    elif sand == False:
-        pygame.draw.rect(window, green, (310, 80, 60, 30))
+
     
     #laver knapper til række 1
+    
     button(ag_tekst,10,80,60,30,green,red,15,86,sand,op)
-
+    
     button(al_tekst,110,80,60,30,green,red,115,86,sand,op)
 
     button(ba_tekst,210,80,60,30,green,red,215,86,sand,op)
@@ -120,6 +125,9 @@ while running:
 
     #Laver blande knappen
     pygame.draw.rect(window, (220, 220, 220), (350, 370, 300, 150))
+
+
+
 
     window.blit(ag, (0,0)) #sætter billede ind i række 1
     window.blit(al, (100, 0))
