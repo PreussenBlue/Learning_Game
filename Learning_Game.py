@@ -16,6 +16,8 @@ na = pygame.image.load("NaCl.png").convert()
 
 #vælger font til tekst
 the_font = pygame.font.SysFont("Comic_Sans", 20)
+nd_font = pygame.font.SysFont("Comic_Sans", 75)
+
 
 #laver farver klar til knapperne
 red = (255, 0, 0)
@@ -32,6 +34,20 @@ ki_tekst = the_font.render("KI", True, (255, 255, 255))
 cu_tekst = the_font.render("CuSO4", True, (255, 255, 255))
 na_tekst = the_font.render("NaCl", True, (255, 255, 255))
 
+#laver tekst til stor knap
+prod_knap_tekst = nd_font.render("Bland!", True, (255, 255, 255))
+
+
+#laver en funktion til knapperne
+def button(tekst,x,y,wid,hei,ac,ic,tx,ty):
+    if x+wid > mouse[0] > x and y+hei > mouse[1] > y:
+        pygame.draw.rect(window, ac, (x, y, wid, hei))
+    else:
+        pygame.draw.rect(window, ic, (x, y, wid, hei))
+    window.blit(tekst, (tx,ty))
+
+
+
 running = True
 while running:
 
@@ -45,45 +61,23 @@ while running:
     mouse = pygame.mouse.get_pos()
     
     #laver knapper til række 1
-    if 10+60 > mouse[0] > 10 and 80+30 > mouse[1] > 80:
-        pygame.draw.rect(window, green, (10, 80, 60, 30))
-    else:
-        pygame.draw.rect(window, red, (10, 80, 60, 30))
+    button(ag_tekst,10,80,60,30,green,red,15,86)
 
-    if 110+60 > mouse[0] > 110 and 80+30 > mouse[1] > 80:
-        pygame.draw.rect(window, green, (110, 80, 60, 30))
-    else:
-        pygame.draw.rect(window, red, (110, 80, 60, 30))
+    button(al_tekst,110,80,60,30,green,red,115,86)
 
-    if 210+60 > mouse[0] > 210 and 80+30 > mouse[1] > 80:
-        pygame.draw.rect(window, green, (210, 80, 60, 30))
-    else:
-        pygame.draw.rect(window, red, (210, 80, 60, 30))
+    button(ba_tekst,210,80,60,30,green,red,215,86)
 
-    if 310+60 > mouse[0] > 310 and 80+30 > mouse[1] > 80:
-        pygame.draw.rect(window, green, (310, 80, 60, 30))
-    else:
-        pygame.draw.rect(window, red, (310, 80, 60, 30))
+    button(ca_tekst,310,80,60,30,green,red,315,86)
 
-    if 410+60 > mouse[0] > 410 and 80+30 > mouse[1] > 80:
-        pygame.draw.rect(window, green, (410, 80, 60, 30))
-    else:
-        pygame.draw.rect(window, red, (410, 80, 60, 30))
+    button(k3_tekst,410,80,60,30,green,red,415,86)
 
-    if 510+60 > mouse[0] > 510 and 80+30 > mouse[1] > 80:
-        pygame.draw.rect(window, green, (510, 80, 60, 30))
-    else:
-        pygame.draw.rect(window, red, (510, 80, 60, 30))
+    button(ki_tekst,510,80,60,30,green,red,515,86)
+
+    button(cu_tekst,610,80,60,30,green,red,615,86)
     
-    if 610+60 > mouse[0] > 610 and 80+30> mouse[1] > 80:
-        pygame.draw.rect(window, green, (610, 80, 60, 30))
-    else:
-        pygame.draw.rect(window, red, (610, 80, 60, 30))
+    button(na_tekst,710,80,60,30,green,red,715,86)
 
-    if 710+60 > mouse[0] > 710 and 80+30 > mouse[1] > 80:
-        pygame.draw.rect(window, green, (710, 80, 60, 30))
-    else:
-        pygame.draw.rect(window, red, (710, 80, 60, 30))
+
     
 
     #laver knapper til række 2
@@ -127,6 +121,9 @@ while running:
     else:
         pygame.draw.rect(window, red, (710, 230, 60, 30))
 
+    #Laver blande knappen
+    pygame.draw.rect(window, (220, 220, 220), (350, 370, 300, 150))
+
     window.blit(ag, (0,0)) #sætter billede ind i række 1
     window.blit(al, (100, 0))
     window.blit(ba, (200, 0))
@@ -146,17 +143,11 @@ while running:
     window.blit(na, (700, 150))
 
 
-
-
+    #sætter tekst ind i den store grå kasse
+    window.blit(prod_knap_tekst, (420, 425))
         
 
     #tekst sættes ind i øverste række
-    window.blit(ag_tekst, (15, 86))
-    window.blit(al_tekst, (115, 86))
-    window.blit(ba_tekst, (215, 86))
-    window.blit(ca_tekst, (315, 86))
-    window.blit(k3_tekst, (415, 86))
-    window.blit(ki_tekst, (515, 86))
     window.blit(cu_tekst, (615, 86))
     window.blit(na_tekst, (715, 86))
 
